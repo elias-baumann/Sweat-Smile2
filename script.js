@@ -109,14 +109,10 @@ window.addEventListener("load", loadCurrentVideo);
 // Event Listener für die Aktualisierung des Fortschrittsbalkens
 // videoElement.addEventListener("timeupdate", updateProgressBar);
 
-
-
 // // Event Listener für Klickereignisse
 // document.addEventListener("click", () => {
 //   videoElement.pause();
 // });
-
-
 
 function doDebug() {
   const debugContainer = document.getElementById("debugContainer");
