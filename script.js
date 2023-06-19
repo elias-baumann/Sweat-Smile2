@@ -12,6 +12,8 @@ const prevButton = document.getElementById("prevBtn");
 const nextButton = document.getElementById("nextBtn");
 const progressBar = document.querySelector(".progress-bar");
 
+let isVideoPaused = true;
+
 // Event Listener für Klickereignisse
 document.addEventListener("click", (event) => {
   const screenWidth = window.innerWidth;
@@ -58,6 +60,9 @@ function playNextVideo() {
   if (currentVideoIndex < videos.length - 1) {
     currentVideoIndex++;
     loadCurrentVideo();
+  } else {
+    currentVideoIndex = 0; // Zurück zum Start von Video1
+    loadCurrentVideo();
   }
   doDebug();
 }
@@ -66,6 +71,9 @@ function playNextVideo() {
 function nextVideo() {
   if (currentVideoIndex < videos.length - 1) {
     currentVideoIndex++;
+    loadCurrentVideo();
+  } else {
+    currentVideoIndex = 0; // Zurück zum Start von Video1
     loadCurrentVideo();
   }
   doDebug();
@@ -101,7 +109,7 @@ function updateProgressBar() {
 // prevButton.addEventListener("click", prevVideo);
 
 // Variable zum Verfolgen des Wiedergabestatus des Videos
-let isVideoPaused = false;
+// let isVideoPaused = false;
 
 // Event Listener für das Laden der Seite
 window.addEventListener("load", loadCurrentVideo);
